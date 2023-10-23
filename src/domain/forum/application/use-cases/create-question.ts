@@ -8,7 +8,7 @@ interface CreateQuestionUseCaseRequest {
   content: string
 }
 
-interface CreateQuestionionUseCaseResponse {
+interface CreateQuestionUseCaseResponse {
   question: Question
 }
 
@@ -19,7 +19,7 @@ export class CreateQuestionUseCase {
     authorId,
     title,
     content,
-  }: CreateQuestionUseCaseRequest): Promise<CreateQuestionionUseCaseResponse> {
+  }: CreateQuestionUseCaseRequest): Promise<CreateQuestionUseCaseResponse> {
     const question = Question.create({
       authorId: new UniqueEntityID(authorId),
       title,
